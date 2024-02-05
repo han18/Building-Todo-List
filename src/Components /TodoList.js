@@ -1,6 +1,7 @@
 import React from "react";
 
-function TodoList() {
+function TodoList(props) {
+  const todoList = props.todo;
   return <div>TodoList</div>;
 }
 
