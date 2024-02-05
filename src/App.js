@@ -1,14 +1,17 @@
 import "./App.css";
 import { initialState } from "./Data/data-list.js";
+import TodoList from "./Components /TodoList.js";
 import { TodoReducer } from "./Reducer/TodoReducer";
 import { useReducer } from "react";
 
 function App() {
-  const [todo, dispatch] = useReducer(initialState);
+  const [todos, dispatch] = useReducer(TodoReducer, initialState);
 
   return (
     <div className="App">
-      <h1>This is a to do list app</h1>
+      <h1>Todo App</h1>
+
+      <TodoList todos={todos} dispatch={dispatch} />
     </div>
   );
 }
