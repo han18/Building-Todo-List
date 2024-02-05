@@ -1,4 +1,4 @@
-const initialState = [
+export const initialState = [
   {
     userId: 1,
     id: 1,
@@ -120,5 +120,3 @@ const initialState = [
     completed: true,
   },
 ];
-
-export default initialState;
