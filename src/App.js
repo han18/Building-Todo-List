@@ -1,7 +1,7 @@
 import "./App.css";
 import { initialState } from "./Data/data-list.js";
 import TodoList from "./Components /TodoList.js";
-import { todoReducer } from "./Reducer/todoReducer.js";
+
 import { useReducer } from "react";
 
 function App() {
