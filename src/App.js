@@ -36,13 +36,6 @@ function App() {
     setEditTodo({ id: null, title: "" });
   };
 
-  return (
-    <div className="App">
-      <h1>Todo App</h1>
-
-      <TodoList todo={todos} dispatch={dispatch} />
-    </div>
-  );
+  return <div></div>;
 }
-
 export default App;
