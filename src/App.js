@@ -36,7 +36,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="App">
       <h1>Todo List</h1>
       <input
         type="text"
@@ -45,45 +45,43 @@ function App() {
         placeholder="add to the list"
       />
       <button onClick={handleAddTodo}>Add Todo</button>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => handleToggleTodo(todo.id)}
-            />
-            {editTodo.id === todo.id ? (
-              <>
-                <input
-                  type="text"
-                  value={editTodo.title}
-                  onChange={(e) =>
-                    setEditTodo({ ...editTodo, title: e.target.value })
-                  }
-                />
-                <button onClick={handleSaveTodo}>Save</button>
-              </>
-            ) : (
-              <>
-                <span>{todo.title}</span>
-                <button
-                  onClick={() => handleEditTodo(todo.id, todo.title)}
-                  disabled={todo.completed}
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => handleDeleteTodo(todo.id)}
-                  disabled={!todo.completed}
-                >
-                  Delete
-                </button>
-              </>
-            )}
-          </li>
-        ))}
-      </ul>
+      {todos.map((todo) => (
+        <div key={todo.id}>
+          <input
+            type="checkbox"
+            checked={todo.completed}
+            onChange={() => handleToggleTodo(todo.id)}
+          />
+          {editTodo.id === todo.id ? (
+            <>
+              <input
+                type="text"
+                value={editTodo.title}
+                onChange={(e) =>
+                  setEditTodo({ ...editTodo, title: e.target.value })
+                }
+              />
+              <button onClick={handleSaveTodo}>Save</button>
+            </>
+          ) : (
+            <>
+              <span>{todo.title}</span>
+              <button
+                onClick={() => handleEditTodo(todo.id, todo.title)}
+                disabled={todo.completed}
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => handleDeleteTodo(todo.id)}
+                disabled={!todo.completed}
+              >
+                Delete
+              </button>
+            </>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

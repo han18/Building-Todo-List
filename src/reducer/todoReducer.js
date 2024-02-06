@@ -13,7 +13,7 @@ export const todoReducer = (state, action) => {
       );
     case "DELETE_TODO":
       return state.filter((todo) => todo.id !== action.payload);
-    case "EDIT":
+    case "EDIT_TODO":
       return state.map((todo) =>
         todo.id === action.payload.id
           ? { ...todo, title: action.payload.title }
