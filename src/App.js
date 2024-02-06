@@ -51,6 +51,14 @@ function App() {
                 checked={todo.completed}
                 onChange={() => handleToggleTodo(todo.id)}
               />
+              {editTodo.id === todo.id ? (
+                <>
+                  <input
+                    type="text"
+                    value={editTodo.title}
+                    onChange={(e) =>
+                      setEditTodo({ ...editTodo, title: e.target.value })
+                    }
     </div>
   );
 }
