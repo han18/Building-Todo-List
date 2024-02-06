@@ -30,9 +30,9 @@ function App() {
         payload: { id: editTodo.id, title: editTodo.title },
       });
       setEditTodo({ id: null, title: "" });
-    };  
-  
-  
+    };
   };
 
- 
+  return <div></div>;
+}
+export default App;
