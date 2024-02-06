@@ -20,6 +20,17 @@ function App() {
     const handleDeleteTodo = (id) => {
       dispatch({ type: "DELETE_TODO", payload: id });
     };
+    const handleEditTodo = (id, title) => {
+      setEditTodo({ id, title });
+    };
+
+    const handleSaveTodo = () => {
+      dispatch({
+        type: "EDIT_TODO",
+        payload: { id: editTodo.id, title: editTodo.title },
+      });
+      setEditTodo({ id: null, title: "" });
+    };  
   
   
   };
