@@ -42,6 +42,7 @@ function App() {
         onChange={(e) => setNewTodo(e.target.value)}
         placeholder="Add new todo"
       />
+      <button onClick={handleAddTodo}>Add Todo</button>
     </div>
   );
 }
