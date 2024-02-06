@@ -59,6 +59,8 @@ function App() {
                     onChange={(e) =>
                       setEditTodo({ ...editTodo, title: e.target.value })
                     }
+                    />
+                    <button onClick={handleSaveTodo}>Save</button>
     </div>
   );
 }
