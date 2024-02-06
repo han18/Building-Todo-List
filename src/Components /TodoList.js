@@ -2,13 +2,6 @@ import React from "react";
 
 function TodoList(props) {
   const todoList = props.todo;
-  return (
-    <div>
-      <form>
-        <input></input>
-      </form>
-    </div>
-  );
+  return <h1>This is a </h1>;
 }
-
 export default TodoList;
