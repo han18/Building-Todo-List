@@ -61,6 +61,14 @@ function App() {
                     }
                     />
                     <button onClick={handleSaveTodo}>Save</button>
+                    </>
+              ) : (
+                <>
+                  <span>{todo.title}</span>
+                  <button
+                    onClick={() => handleEditTodo(todo.id, todo.title)}
+                    disabled={todo.completed}
+                  ></button>
     </div>
   );
 }
