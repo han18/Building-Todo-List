@@ -33,6 +33,16 @@ function App() {
     };
   };
 
-  return <div></div>;
+  return (
+    <div>
+      <h1>Todo List</h1>
+      <input
+        type="text"
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
+        placeholder="Add new todo"
+      />
+    </div>
+  );
 }
 export default App;
