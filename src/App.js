@@ -43,6 +43,14 @@ function App() {
         placeholder="Add new todo"
       />
       <button onClick={handleAddTodo}>Add Todo</button>
+        <ul>
+          {todos.map((todo) => (
+            <li key={todo.id}>
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => handleToggleTodo(todo.id)}
+              />
     </div>
   );
 }
