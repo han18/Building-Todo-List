@@ -20,6 +20,7 @@ function App() {
     const handleDeleteTodo = (id) => {
       dispatch({ type: "DELETE_TODO", payload: id });
     };
+
     const handleEditTodo = (id, title) => {
       setEditTodo({ id, title });
     };
@@ -31,18 +32,17 @@ function App() {
       });
       setEditTodo({ id: null, title: "" });
     };
-  };
 
-  return (
-    <div>
-      <h1>Todo List</h1>
-      <input
-        type="text"
-        value={newTodo}
-        onChange={(e) => setNewTodo(e.target.value)}
-        placeholder="Add new todo"
-      />
-      <button onClick={handleAddTodo}>Add Todo</button>
+    return (
+      <div>
+        <h1>Todo List</h1>
+        <input
+          type="text"
+          value={newTodo}
+          onChange={(e) => setNewTodo(e.target.value)}
+          placeholder="Add new todo"
+        />
+        <button onClick={handleAddTodo}>Add Todo</button>
         <ul>
           {todos.map((todo) => (
             <li key={todo.id}>
@@ -59,17 +59,31 @@ function App() {
                     onChange={(e) =>
                       setEditTodo({ ...editTodo, title: e.target.value })
                     }
-                    />
-                    <button onClick={handleSaveTodo}>Save</button>
-                    </>
+                  />
+                  <button onClick={handleSaveTodo}>Save</button>
+                </>
               ) : (
                 <>
                   <span>{todo.title}</span>
                   <button
                     onClick={() => handleEditTodo(todo.id, todo.title)}
                     disabled={todo.completed}
-                  ></button>
-    </div>
-  );
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDeleteTodo(todo.id)}
+                    disabled={!todo.completed}
+                  >
+                    Delete
+                  </button>
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
 }
 export default App;
